@@ -1,0 +1,1100 @@
+/* Estilos del Header */
+header {
+    background:
+        radial-gradient(circle at center,
+            var(--color-primary-gold) -20%,
+            var(--color-blue) 40%,
+            var(--color-dark) 100%);
+    color: var(--text-primary);
+    padding: 6rem 0 5rem 0; /* Aumentamos el padding superior para que el nav fijo no tape la foto al cargar */
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.profile-image-container {
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 2rem;
+    border: 5px solid var(--text-primary);
+    box-shadow: 0 0 0 5px var(--overlay-light-strong);
+}
+
+.profile-picture {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ajustamos el segundo valor (Y).
+       'center' es 50%. Un valor como 20% o 25% "empuja"
+       el contenido de la foto hacia abajo en el visor.
+    */
+    object-position: center 1%;
+}
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+header p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+/* =========================================
+   FIXED NAV / NAVEGACIÓN FIJA (Corregido)
+   ========================================= */
+header nav {
+    position: fixed; /* Cambiado a fixed para que se quede pegado a la ventana siempre */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: var(--overlay-nav); /* Fondo oscuro con transparencia */
+    backdrop-filter: blur(12px); /* Efecto Glassmorphism */
+    -webkit-backdrop-filter: blur(12px);
+    padding: 1rem 0;
+    box-shadow: 0 4px 15px var(--shadow-soft);
+    border-bottom: 1px solid var(--overlay-light);
+}
+
+header nav .nav-toggle {
+    display: none;
+    border: 1px solid var(--border-soft-strong);
+    background: var(--overlay-light);
+    border-radius: 6px;
+    padding: 0.55rem 0.5rem;
+    cursor: pointer;
+}
+
+header nav .nav-toggle-line {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background-color: var(--text-primary);
+    margin: 4px 0;
+    border-radius: 2px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap; /* Permite que los enlaces bajen de línea si no caben en móvil */
+    gap: 15px;
+}
+
+header nav ul li a {
+    font-family: var(--font-mono);
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.05rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: var(--color-dark);
+    background-color: var(--color-primary-gold);
+}
+
+/* Resto de tu CSS original a partir de aquí... */
+
+/* Estilos para el botón del header */
+.hero-section button {
+    font-family: var(--font-mono);
+    background-color: var(--color-primary-gold);
+    color: var(--color-dark);
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.hero-section button:hover {
+    background-color: var(--color-dark);
+    color: var(--color-primary-gold);
+    /* Solo añadimos un borde dorado y un resplandor fuerte */
+    border: 1px solid var(--color-primary-gold);
+    box-shadow: 0 0 15px var(--color-primary-gold);
+    transform: translateY(-4px);
+}
+
+.hero-section span {
+    color: var(--color-primary-gold);
+    font-style: italic;
+}
+/* Sección "CONOCEME" */
+main .container {
+    background-color: var(--color-dark);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.admin-section{
+    flex-grow: 1;
+}
+
+#about {
+    text-align: center;
+}
+
+#about h2, #skills h2, #projects h2, #contact h2 {
+    color: var(--color-primary-gold);
+}
+
+#about p {
+    color: var(--color-white);
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.1rem;
+}
+
+#about button {
+    font-family: var(--font-mono);
+    background-color: var(--color-primary-gold);
+    color: var(--color-dark);
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: .5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+#about button:hover {
+    background-color: var(--color-dark);
+    color: var(--color-primary-gold);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px var(--shadow-accent);
+}
+
+/* Sección MY EDUCATION / MY EXPERIENCE (pueden compartir estilos de lista) */
+#education h2, #experience h2 {
+    color: var(--color-primary-gold);
+}
+
+.education-timeline,
+.experience-timeline {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.timeline-item {
+    background: var(--overlay-surface);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border-soft);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: .8rem;
+    box-shadow: 0 2px 5px var(--shadow-soft);
+}
+
+.timeline-item h3 {
+    color: var(--color-primary-gold);
+    margin-bottom: .5rem;
+}
+
+.timeline-item p {
+    color: var(--color-white);
+}
+
+.timeline-item .timeline-date {
+    font-family: var(--font-mono);
+    font-style: italic;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+/* Sección MY SKILLS */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+}
+
+.skill-card {
+    background: var(--overlay-surface);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border-soft);
+    padding: 2rem;
+    border-radius: .8rem;
+    box-shadow: 0 4px 8px var(--shadow-soft);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+}
+
+.skill-card img {
+    max-width: 8rem;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.skill-card h3 {
+    font-family: var(--font-mono);
+    font-size: 1.2rem;
+    color: var(--color-primary-gold);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 3rem;
+}
+
+.project-card {
+    background: var(--overlay-surface);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border-soft);
+    border-radius: .8rem;
+    box-shadow: 0 4px 8px var(--shadow-soft);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card a {
+    background-color: var(--color-primary-gold);
+    color: var(--color-dark);
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+.project-card a:hover {
+    background-color: var(--color-dark);
+    color: var(--color-primary-gold);
+    border: 1px solid var(--color-primary-gold);
+    box-shadow: 0 0 15px var(--color-primary-gold);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card img {
+    width: 100%;
+    height: 20rem;
+    object-fit: cover;
+}
+
+.project-card h3 {
+    padding: 1.5rem;
+    font-size: 1.4rem;
+    color: var(--color-primary-gold);
+}
+
+.project-card p {
+    padding: 0 15px 15px;
+    font-size: 0.95rem;
+}
+
+/* Sección Form */
+.contact-form {
+    max-width: 60rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-soft);
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button[type="submit"] {
+    font-family: var(--font-mono);
+    background-color: var(--color-blue);
+    color: var(--text-primary);
+    padding: 1.2rem 2.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.contact-form button[type="submit"]:hover {
+    background-color: var(--color-primary-gold);
+    color: var(--color-dark);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px var(--shadow-accent);
+}
+
+footer {
+    background-color: var(--color-dark);
+}
+.error-message {
+    color: var(--color-danger);
+    font-size: 0.9em;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+/*Estilos pagina error-page.html*/
+.error-page {
+    background-color: var(--color-blue);
+    padding: 30px;
+    margin-top: 30px;
+    border-radius: 8px;
+    color: var(--color-white);
+    box-shadow: 0 4px 8px var(--shadow-soft);
+}
+
+.error-page h2 {
+    color: var(--color-primary-gold);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.error-page p {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.error-page a {
+    display: inline-block;
+    background-color: var(--color-primary-gold);
+    color: var(--color-dark);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.error-page a:hover {
+    background-color: var(--color-dark);
+    color: var(--color-primary-gold);
+}
+.line-white{
+    padding: 40px 0;
+    border-bottom: 1px solid var(--border-soft);
+}
+.message-success {
+    background-color: var(--message-success-bg); /* Verde claro */
+    color: var(--message-success-text); /* Verde oscuro */
+    border: 1px solid var(--message-success-border);
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+.message-error {
+    background-color: var(--message-error-bg); /* Rojo claro */
+    color: var(--message-error-text); /* Rojo oscuro */
+    border: 1px solid var(--message-error-border);
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+/* Estilos para el botón de Editar */
+.btn-edit {
+    display: inline-block; /* Para que el padding y margin funcionen correctamente */
+    padding: 8px 15px;
+    margin-right: 5px; /* Pequeño espacio a la derecha si hay otro botón */
+    background-color: var(--color-success); /* Un verde amigable */
+    color: var(--text-primary);
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-edit:hover {
+    background-color: var(--color-success-hover); /* Un verde un poco más oscuro al pasar el ratón */
+}
+
+/* Estilos para el botón de Eliminar */
+.btn-delete {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: var(--color-danger); /* Un rojo para indicar peligro */
+    color: var(--text-primary);
+    text-align: center;
+    text-decoration: none; /* Asegura que no se vea como un enlace */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-delete:hover {
+    background-color: var(--color-danger-hover); /* Un rojo más oscuro al pasar el ratón */
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 5.5rem 0 4rem 0;
+    }
+
+    header nav {
+        padding: 0.75rem 1rem;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    header nav .nav-toggle {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    header nav #public-nav-list {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--overlay-surface-strong);
+        border-top: 1px solid var(--border-soft);
+        box-shadow: 0 10px 20px var(--shadow-soft);
+        padding: 0.75rem 1rem 1rem;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.25rem;
+    }
+
+    header nav #public-nav-list.active {
+        display: flex;
+        flex-direction: column;
+    }
+
+    header nav #public-nav-list li {
+        width: 100%;
+        margin: 0;
+    }
+
+    header nav #public-nav-list li a {
+        display: block;
+        width: 100%;
+        padding: 0.85rem 0.75rem;
+        font-size: 1rem;
+    }
+
+    main .container {
+        padding: 24px 16px;
+    }
+
+    .line-white {
+        padding: 24px 0;
+    }
+
+    header h1 {
+        font-size: 2.1rem;
+    }
+
+    main h2 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Login Page */
+.login-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(
+        135deg,
+        var(--color-blue),
+        var(--color-dark)
+    );
+    padding: 2rem;
+}
+
+.login-container {
+    background: var(--overlay-surface);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border-soft);
+    padding: 3rem 4rem;
+    border-radius: 1rem;
+    box-shadow: 0 6px 15px var(--shadow-soft);
+    max-width: 40rem;
+    width: 100%;
+    text-align: center;
+}
+
+.login-container h1 {
+    margin-bottom: 2rem;
+    color: var(--color-primary-gold);
+    font-size: 2.2rem;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: .5rem;
+    font-weight: bold;
+    color: var(--text-primary);
+}
+
+.login-form input {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid var(--border-soft);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    border-radius: .5rem;
+    font-size: 1rem;
+}
+
+.login-form input:focus {
+    outline: none;
+    border-color: var(--color-primary-gold);
+    box-shadow: 0 0 0 2px var(--shadow-accent);
+}
+
+.login-form button {
+    font-family: var(--font-mono);
+    background-color: var(--color-primary-gold);
+    color: var(--color-dark);
+    padding: 1rem;
+    border: none;
+    border-radius: .5rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.login-form button:hover {
+    background-color: var(--color-dark);
+    color: var(--color-primary-gold);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px var(--shadow-accent);
+}
+.btn-logout {
+    display: inline-block;
+    padding: 10px 18px;
+    background-color: var(--color-blue);
+    color: var(--text-primary);
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-logout:hover {
+    background-color: var(--color-primary-gold);
+    color: var(--color-dark);
+    transform: translateY(-2px);
+}
+/* Contenedor principal de botones en el Hero */
+.hero-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+/* Fila de botones secundarios (Redes y CVs) */
+.action-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* Botón Estilo Secundario (Dorado con borde o texto blanco) */
+.btn-secondary {
+    font-family: var(--font-mono);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 0.95rem;
+    border: 1px solid var(--border-soft);
+    border-radius: 5px;
+    background: var(--overlay-light);
+    transition: all 0.3s ease;
+}
+
+.btn-secondary i {
+    font-size: 1.1rem;
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-primary-gold);
+    color: var(--color-dark);
+    border-color: var(--color-primary-gold);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px var(--shadow-accent);
+}
+
+/* Botón Principal (MIS PROYECTOS) */
+.btn-primary {
+    font-family: var(--font-mono);
+    background-color: var(--color-primary-gold);
+    color: var(--color-dark);
+    padding: 1.2rem 2.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px var(--shadow-accent);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-accent-hover);
+    color: var(--color-dark);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px var(--shadow-accent);
+}
+
+/* Ajuste móvil */
+@media (max-width: 600px) {
+    .action-group {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+        max-width: 320px;
+    }
+}
+/* 1. Separación de la navegación */
+.hero-text {
+    margin-top: 5rem; /* Aumenta este valor si quieres más espacio respecto al nav */
+    margin-bottom: 2.5rem;
+}
+
+/* 2. El saludo en blanco sutil */
+.hero-greeting {
+    font-family: var(--font-mono);
+    display: block;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--text-secondary); /* Blanco con un poco de transparencia */
+    margin-bottom: 0.5rem;
+}
+
+/* 3. El NOMBRE es el único que mantiene el DORADO */
+.hero-name {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--color-primary-gold);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    text-shadow: 2px 4px 10px var(--shadow-soft);
+}
+
+/* 4. El TÍTULO en blanco limpio */
+.hero-title {
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: var(--text-primary); /* Blanco puro para que sea legible pero no compita con el nombre */
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0.9;
+    border-top: 1px solid var(--overlay-light-strong);
+    padding-top: 1rem;
+    margin-top: 1rem;
+}
+/* =========================================
+   SECCIÓN LIBRO DE VISITAS (GUESTBOOK)
+   ========================================= */
+
+/* Destacamos toda la sección con un fondo y un borde superior */
+#guestbook {
+    background: linear-gradient(to bottom, var(--color-dark), var(--color-blue));
+    padding: 5rem 0;
+    border-top: 2px solid var(--color-primary-gold);
+    border-radius: 1rem; /* Bordes redondeados para que parezca una "tarjeta" gigante */
+    box-shadow: 0 -10px 25px var(--shadow-soft);
+    margin-top: 3rem;
+}
+
+/* Hacemos que el título principal brille en dorado */
+#guestbook h2 {
+    color: var(--color-primary-gold);
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px var(--shadow-soft);
+    letter-spacing: 2px;
+}
+
+.guestbook-description {
+    text-align: center;
+    color: var(--color-white);
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* Grid Container - Dos columnas en desktop, una en móvil */
+.guestbook-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+    gap: 3rem; /* Espacio entre columnas */
+    max-width: 120rem;
+    margin: 0 auto;
+    align-items: start; /* Alinea los elementos al inicio para que tengan alturas independientes */
+}
+
+/* Subtítulo para el formulario */
+.guestbook-subtitle {
+    color: var(--color-primary-gold);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Wrapper del formulario */
+.guestbook-form-wrapper button[type="submit"]:hover {
+    background-color: var(--color-accent-hover);
+    color: var(--color-dark);
+    transform: translateY(-4px);
+    /* Forzamos el resplandor aquí también */
+    box-shadow: 0 0 20px var(--color-primary-gold);
+}
+}
+
+.guestbook-form-wrapper .contact-form {
+    max-width: 100%; /* Ocupa todo el ancho del wrapper */
+}
+
+.guestbook-form-wrapper .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.guestbook-form-wrapper input[type="text"],
+.guestbook-form-wrapper textarea {
+    width: 100%;
+    padding: 1.2rem;
+    border: 1px solid var(--overlay-light-strong);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    background-color: var(--bg-secondary);
+    transition: border-color 0.3s ease;
+}
+
+.guestbook-form-wrapper input[type="text"]:focus,
+.guestbook-form-wrapper textarea:focus {
+    outline: none;
+    border-color: var(--color-primary-gold);
+    box-shadow: 0 0 0 2px var(--shadow-accent);
+}
+
+.guestbook-form-wrapper button[type="submit"] {
+    font-family: var(--font-mono);
+    width: 100%;
+    background-color: var(--color-primary-gold);
+    color: var(--color-dark);
+    padding: 1.2rem 2rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.guestbook-form-wrapper button[type="submit"]:hover {
+    background-color: var(--color-accent-hover);
+    color: var(--color-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--shadow-accent);
+}
+
+.honeypot-field {
+    display: none !important;
+}
+
+/* Contenedor de mensajes - Columna derecha */
+.guestbook-messages {
+    background-color: var(--overlay-surface);
+    padding: 2.5rem;
+    border-radius: 1rem;
+    border: 1px solid var(--shadow-accent);
+    max-height: 70rem; /* Altura máxima para scroll */
+    overflow-y: auto; /* Scroll vertical si hay muchos mensajes */
+}
+
+/* Estilo personalizado para el scrollbar */
+.guestbook-messages::-webkit-scrollbar {
+    width: 0.8rem;
+}
+
+.guestbook-messages::-webkit-scrollbar-track {
+    background: var(--overlay-surface);
+    border-radius: 1rem;
+}
+
+.guestbook-messages::-webkit-scrollbar-thumb {
+    background: var(--color-primary-gold);
+    border-radius: 1rem;
+}
+
+.guestbook-messages::-webkit-scrollbar-thumb:hover {
+    background: var(--color-secondary-green);
+}
+
+.guestbook-title {
+    color: var(--color-primary-gold);
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.no-messages {
+    text-align: center;
+    color: var(--color-white);
+    opacity: 0.7;
+    font-style: italic;
+    padding: 2rem;
+}
+
+/* Lista y Tarjetas de Mensajes */
+.messages-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.message-card {
+    background-color: var(--overlay-surface);
+    padding: 1.5rem;
+    border-radius: 0.8rem;
+    border-left: 4px solid var(--color-primary-gold);
+    box-shadow: 0 4px 8px var(--shadow-soft);
+    transition: all 0.3s ease;
+}
+
+.message-card:hover {
+    transform: translateX(5px);
+    box-shadow: 0 6px 12px var(--shadow-accent);
+    background-color: var(--overlay-surface-strong);
+}
+
+.message-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.8rem;
+    border-bottom: 1px solid var(--overlay-light);
+    padding-bottom: 0.5rem;
+}
+
+.message-author {
+    color: var(--color-primary-gold);
+    font-size: 1.1rem;
+}
+
+.message-date {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+.message-content {
+    color: var(--color-white);
+    margin: 0;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/* =========================================
+   RESPONSIVE - DISEÑO MÓVIL
+   ========================================= */
+
+/* Tablet y dispositivos medianos */
+@media (max-width: 900px) {
+    .guestbook-grid {
+        grid-template-columns: 1fr; /* Una sola columna */
+        gap: 2rem;
+    }
+
+    .guestbook-messages {
+        max-height: 50rem; /* Altura reducida en móvil */
+    }
+
+    #guestbook {
+        padding: 3rem 1rem;
+    }
+
+    #guestbook h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Móviles pequeños */
+@media (max-width: 600px) {
+    .guestbook-form-wrapper,
+    .guestbook-messages {
+        padding: 1.5rem;
+    }
+
+    .guestbook-subtitle,
+    .guestbook-title {
+        font-size: 1.2rem;
+    }
+
+    .message-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3rem;
+    }
+
+    .guestbook-messages {
+        max-height: 40rem;
+    }
+}
+
+/* =========================================
+   CONTROLES DE PAGINACIÓN
+   ========================================= */
+
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--shadow-accent);
+}
+
+.pagination-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+    background-color: var(--overlay-surface);
+    color: var(--color-primary-gold);
+    border: 2px solid var(--color-primary-gold);
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.pagination-arrow:hover:not(.disabled) {
+    background-color: var(--color-primary-gold);
+    color: var(--color-dark);
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px var(--shadow-accent);
+}
+
+.pagination-arrow.disabled {
+    background-color: var(--overlay-surface);
+    color: var(--text-secondary);
+    border-color: var(--border-soft);
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.pagination-arrow.disabled:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.pagination-info {
+    color: var(--color-white);
+    font-size: 1.3rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    min-width: 8rem;
+    text-align: center;
+}
+
+.pagination-info span:first-child {
+    color: var(--color-primary-gold);
+    font-size: 1.5rem;
+}
+
+/* Responsive para paginación */
+@media (max-width: 600px) {
+    .pagination-controls {
+        gap: 1.5rem;
+    }
+
+    .pagination-arrow {
+        width: 3.5rem;
+        height: 3.5rem;
+        font-size: 1.2rem;
+    }
+
+    .pagination-info {
+        font-size: 1.1rem;
+        min-width: 6rem;
+    }
+
+    .pagination-info span:first-child {
+        font-size: 1.3rem;
+    }
+}

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<!-- saved from url=(0019)https://jortiz.dev/ -->
+<html lang="es">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/general.css">
+
+
+    <title>Portfolio</title>
+</head>
+
+<body>
+
+    <header class="line-white">
+        <div class="container">
+            <div>
+                <nav data-nav-public="">
+                    <button class="nav-toggle" type="button" aria-label="Abrir menú de navegación" aria-expanded="false"
+                        aria-controls="public-nav-list">
+                        <span class="nav-toggle-line"></span>
+                        <span class="nav-toggle-line"></span>
+                        <span class="nav-toggle-line"></span>
+                    </button>
+
+                    <ul id="public-nav-list">
+                        <li><a href="https://jortiz.dev/">Inicio</a></li>
+                        <li><a href="https://jortiz.dev/#education">Educación</a></li>
+                        <li><a href="https://jortiz.dev/#skills">Habilidades</a></li>
+                        <li><a href="https://jortiz.dev/#experience">Experiencia</a></li>
+                        <li><a href="https://jortiz.dev/#projects">Proyectos</a></li>
+                        <li><a href="https://jortiz.dev/#contact">Contacto</a></li>
+
+
+
+                    </ul>
+
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function () {
+                            var nav = document.querySelector('nav[data-nav-public]');
+                            if (!nav) return;
+
+                            var toggleButton = nav.querySelector('.nav-toggle');
+                            var menuList = nav.querySelector('#public-nav-list');
+                            if (!toggleButton || !menuList) return;
+
+                            function closeMenu() {
+                                menuList.classList.remove('active');
+                                toggleButton.setAttribute('aria-expanded', 'false');
+                            }
+
+                            toggleButton.addEventListener('click', function () {
+                                var isActive = menuList.classList.toggle('active');
+                                toggleButton.setAttribute('aria-expanded', String(isActive));
+                            });
+
+                            menuList.querySelectorAll('a').forEach(function (link) {
+                                link.addEventListener('click', function () {
+                                    if (window.innerWidth <= 768) {
+                                        closeMenu();
+                                    }
+                                });
+                            });
+
+                            window.addEventListener('resize', function () {
+                                if (window.innerWidth > 768) {
+                                    closeMenu();
+                                }
+                            });
+                        });
+                    </script>
+                </nav>
+            </div>
+            <div>
+                <div class="hero-section">
+
+                    <div class="hero-text">
+                        <span class="hero-greeting">Hola, soy</span>
+                        <h1 class="hero-name">José Antonio Ortiz Sánchez</h1>
+                        <p class="hero-title">Java Backend Developer</p>
+                    </div>
+
+                    <div class="profile-image-container">
+                        <img src="img/projects/1fb8365b-c425-4b92-a579-65c67ad13493.jpeg" alt="Profile"
+                            class="profile-picture">
+                    </div>
+
+                    <div class="hero-actions">
+                        <div class="action-group">
+                            <a href="https://www.linkedin.com/in/jose-antonio-ortiz-sanchez/" target="_blank"
+                                class="btn-secondary">
+                                <i class="fab fa-linkedin"></i> LinkedIn
+                            </a>
+                            <a href="https://github.com/zitor83" target="_blank" class="btn-secondary">
+                                <i class="fab fa-github"></i> Github
+                            </a>
+                            <a href="docs\CV_JoseOrtiz_OnePage.pdf" class="btn-secondary" download="">
+                                <i class="fa-solid fa-file-pdf"></i> CV (ES)
+                            </a>
+                            <a href="docs\CV_EN_JoseOrtiz_OnePage.pdf" class="btn-secondary" download="">
+                                <i class="fa-solid fa-file-pdf"></i> CV (EN)
+                            </a>
+                        </div>
+
+                        <div class="main-cta">
+                            <a href="https://jortiz.dev/#projects">
+                                <button class="btn-primary">MIS PROYECTOS</button>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <div class="container">
+            <div class="line-white">
+                <section id="about">
+                    <h2>SOBRE MI</h2>
+                    <p>Perfil híbrido que combina la visión estratégica de la Diplomatura en Empresariales con la
+                        especialización técnica en desarrollo Backend. Más de 10 años liderando equipos en entornos de
+                        alta presión, ahora enfocado en construir arquitecturas robustas con Java y Spring Boot.</p>
+                    <a href="https://jortiz.dev/#projects">
+                        <button>Estos son mis proyectos</button>
+                    </a>
+
+                </section>
+            </div>
+            <div class="line-white">
+                <section id="education">
+                    <h2>Educación</h2>
+                    <div class="education-timeline">
+                        <div class="timeline-item">
+                            <h3>Certificado de Profesionalidad - Programación (Java/SQL) - CPIFP Alan Turing</h3>
+                            <p class="timeline-date">13/04/2025 - 09/12/2025</p>
+                            <p>Enfoque practico en Java y SQL</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h3>Desarrollo de Aplicaciones Web (DAW) - CESUR</h3>
+                            <p class="timeline-date">15/09/2024 - Actualidad</p>
+                            <p>Especialización en desarrollo Full Stack con foco en arquitecturas Java/Spring y
+                                despliegue de aplicaciones.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h3>Diplomatura en Ciencias Empresariales - Universidad de Málaga (UMA)</h3>
+                            <p class="timeline-date">01/10/2004 - 30/06/2008</p>
+                            <p>Enfoque en gestión de operaciones, finanzas y dirección de recursos humanos.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h3>Formación en Inglés - Escuela oficial de idiomas</h3>
+                            <p class="timeline-date">14/08/2002 - 30/06/2008</p>
+                            <p>Desarrollo de competencias lingüísticas para entornos profesionales y técnicos.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="line-white">
+                <section id="skills">
+                    <h2>Habilidades</h2>
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <img src="img\logos\java.png" alt="Java">
+                            <h3>Java</h3>
+                        </div>
+                        <div class="skill-card">
+                            <img src="img\logos\spring.svg" alt="Spring Boot">
+                            <h3>Spring Boot</h3>
+                        </div>
+                        <div class="skill-card">
+                            <img src="img\logos\html-5.png" alt="HTML-5">
+                            <h3>HTML-5</h3>
+                        </div>
+                        <div class="skill-card">
+                            <img src="img\logos\css-3.png" alt="CSS">
+                            <h3>CSS</h3>
+                        </div>
+                        <div class="skill-card">
+                            <img src="img\logos\js.png" alt="JavaScript">
+                            <h3>JavaScript</h3>
+                        </div>
+                        <div class="skill-card">
+                            <img src="img\logos\angular.png" alt="Angular">
+                            <h3>Angular</h3>
+                        </div>
+                        <div class="skill-card">
+                            <img src="img\logos\postgre.png" alt="PostgreSQL">
+                            <h3>PostgreSQL</h3>
+                        </div>
+                        <div class="skill-card">
+                            <img src="img\logos\docker.svg" alt="Docker">
+                            <h3>Docker</h3>
+                        </div>
+                        <div class="skill-card">
+                            <img src="img\logos\github.png" alt="Github">
+                            <h3>Github</h3>
+                        </div>
+                        <div class="skill-card">
+                            <img src="img\logos\equipo.svg" alt="Liderazgo de Equipos">
+                            <h3>Liderazgo de Equipos</h3>
+                        </div>
+                        <div class="skill-card">
+                            <img src="img\logos\negocio.svg" alt="Gestión de Negocio">
+                            <h3>Gestión de Negocio</h3>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="line-white">
+                <section id="experience">
+                    <h2>Experiencia</h2>
+                    <div class="experience-timeline">
+                        <div class="timeline-item">
+                            <h3>Desarrollador Web (Prácticas) - Aliquindoi</h3>
+                            <p class="timeline-date">2025-11-03 - 2025-12-29</p>
+                            <p>Colaboración en el desarrollo de soluciones tecnológicas y aplicación de metodologías
+                                ágiles en proyectos reales.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h3>AI Data Trainer / Evaluador de Modelos de IA (Freelance) - Outlier - TELUS</h3>
+                            <p class="timeline-date">2024-10-01 - 2025-02-26</p>
+                            <p>Análisis y evaluación de prompts para modelos LLM/NLP, realizando fine-tuning y control
+                                de calidad (QA).</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h3>Operations &amp; Team Manager - Sector Hospitality</h3>
+                            <p class="timeline-date">2014-01-01 - 2024-08-31</p>
+                            <p>Liderazgo de equipos multidisciplinares, optimización de procesos operativos y gestión de
+                                KPIs en entornos de gran volumen.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="line-white">
+                <section id="projects">
+                    <h2>Proyectos</h2>
+                    <div class="projects-grid">
+                        <div class="project-card">
+                            <img src="img\projects\project2.jpg" alt="Portfolio ProfesionalImagen del Proyecto">
+                            <h3>Portfolio Profesional</h3>
+                            <p>Desarrollo de este sitio web dinámico para centralizar mi trayectoria técnica y de
+                                gestión.</p>
+                            <a href="https://github.com/zitor83/my-portfolio-backend" target="_blank"> Vista del
+                                Proyecto </a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="line-white">
+                <section id="contact">
+                    <h2>Contacto</h2>
+                    <form class="contact-form" action="https://formspree.io/f/xbdkplno" method="POST">
+                        <input name="nombre" type="text" placeholder="Nombre" required="">
+                        <input name="email" type="email" placeholder="Email" required="">
+                        <textarea name="mensaje" type="text" placeholder="Mensaje" rows="6" required=""></textarea>
+                        <button type="submit">Enviar</button>
+                    </form>
+                </section>
+            </div>
+            <div>
+
+            </div>
+        </div>
+    </main>
+
+    <div>
+        <footer>
+            <nav>
+                <p>© 2026 My Portfolio.All rights reserved.</p>
+            </nav>
+
+        </footer>
+    </div>
+
+</body>
+
+</html>
