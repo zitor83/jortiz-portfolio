@@ -3,7 +3,7 @@
 <html lang="es">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -21,7 +21,7 @@
     <header class="line-white">
         <div class="container">
             <div>
-                <nav data-nav-public="">
+                <nav data-nav-public="" aria-label="Navegación principal">
                     <button class="nav-toggle" type="button" aria-label="Abrir menú de navegación" aria-expanded="false"
                         aria-controls="public-nav-list">
                         <span class="nav-toggle-line"></span>
@@ -243,14 +243,14 @@
                 <section id="projects">
                     <h2>Proyectos</h2>
                     <div class="projects-grid">
-                        <div class="project-card">
+                        <article class="project-card">
                             <img src="img/projects/project2.jpg" alt="Proyecto de portfolio profesional">
                             <h3>Portfolio Profesional</h3>
                             <p>Desarrollo de este sitio web dinámico para centralizar mi trayectoria técnica y de
                                 gestión.</p>
                             <a href="https://github.com/zitor83/my-portfolio-backend" target="_blank" rel="noopener noreferrer"> Vista del
                                 Proyecto </a>
-                        </div>
+                        </article>
                     </div>
                 </section>
             </div>
@@ -258,9 +258,12 @@
                 <section id="contact">
                     <h2>Contacto</h2>
                     <form class="contact-form" action="https://formspree.io/f/xbdkplno" method="POST">
-                        <input name="nombre" type="text" placeholder="Nombre" required="">
-                        <input name="email" type="email" placeholder="Email" required="">
-                        <textarea name="mensaje" placeholder="Mensaje" rows="6" required=""></textarea>
+                        <label for="nombre" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Nombre</label>
+                        <input id="nombre" name="nombre" type="text" placeholder="Nombre" autocomplete="name" required="">
+                        <label for="email" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Email</label>
+                        <input id="email" name="email" type="email" placeholder="Email" autocomplete="email" required="">
+                        <label for="mensaje" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" placeholder="Mensaje" rows="6" required=""></textarea>
                         <button type="submit">Enviar</button>
                     </form>
                 </section>
@@ -273,9 +276,7 @@
 
     <div>
         <footer>
-            <nav>
-                <p>© 2026 Mi portfolio. Todos los derechos reservados.</p>
-            </nav>
+            <p>© 2026 Mi portfolio. Todos los derechos reservados.</p>
 
         </footer>
     </div>
