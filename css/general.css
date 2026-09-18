@@ -20,13 +20,10 @@
     --overlay-light-strong: rgba(248, 250, 252, 0.2);
 
     --shadow-soft: rgba(2, 6, 23, 0.35);
-    --shadow-medium: rgba(2, 6, 23, 0.5);
     --shadow-accent: rgba(250, 204, 21, 0.4);
 
     /* Compatibilidad con variables existentes */
     --color-primary-gold: var(--color-accent);
-    --color-secondary-green: var(--color-accent-hover);
-    --color-primary-sky: #38bdf8;
     --color-blue: var(--bg-secondary);
     --color-dark: var(--bg-primary);
     --color-white: var(--text-primary);
