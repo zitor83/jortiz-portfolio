@@ -111,6 +111,22 @@ header nav ul li a:hover {
     background-color: var(--color-primary-gold);
 }
 
+header nav ul li a:focus-visible,
+header nav .nav-toggle:focus-visible,
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--color-accent-hover);
+    outline-offset: 3px;
+}
+
+input:focus-visible,
+textarea:focus-visible {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 2px var(--shadow-accent);
+}
+
 /* Resto de tu CSS original a partir de aquí... */
 
 /* Estilos para el botón del header */
@@ -248,17 +264,23 @@ main .container {
     border-radius: .8rem;
     box-shadow: 0 4px 8px var(--shadow-soft);
     text-align: center;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .skill-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 8px 16px var(--shadow-soft);
 }
 
 .skill-card img {
     max-width: 8rem;
     height: auto;
     margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.skill-card:hover img {
+    transform: scale(1.03);
 }
 
 .skill-card h3 {
@@ -290,6 +312,11 @@ main .container {
     
 }
 
+.project-card {
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
 .project-card a:hover {
     background-color: var(--color-dark);
     color: var(--color-primary-gold);
@@ -299,12 +326,18 @@ main .container {
 
 .project-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 10px 24px var(--shadow-soft);
 }
 
 .project-card img {
     width: 100%;
     height: 20rem;
     object-fit: cover;
+    transition: filter 0.4s ease-in-out, transform 0.3s ease;
+}
+
+.project-card:hover img {
+    transform: scale(1.05);
 }
 
 .project-card h3 {
@@ -560,4 +593,75 @@ footer {
     border-top: 1px solid var(--overlay-light-strong);
     padding-top: 1rem;
     margin-top: 1rem;
+}
+
+@keyframes hero-enter {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-section.hero-animate .hero-greeting,
+.hero-section.hero-animate .hero-name,
+.hero-section.hero-animate .hero-title,
+.hero-section.hero-animate .profile-image-container,
+.hero-section.hero-animate .hero-actions {
+    animation: hero-enter 0.55s ease-out both;
+}
+
+.hero-section.hero-animate .hero-name {
+    animation-delay: 70ms;
+}
+
+.hero-section.hero-animate .hero-title {
+    animation-delay: 140ms;
+}
+
+.hero-section.hero-animate .profile-image-container {
+    animation-delay: 210ms;
+}
+
+.hero-section.hero-animate .hero-actions {
+    animation-delay: 280ms;
+}
+
+.skill-card.reveal,
+.project-card.reveal {
+    transition: opacity 0.55s ease var(--reveal-delay, 0ms),
+        transform 0.55s ease var(--reveal-delay, 0ms),
+        box-shadow 0.3s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .hero-section.hero-animate .hero-greeting,
+    .hero-section.hero-animate .hero-name,
+    .hero-section.hero-animate .hero-title,
+    .hero-section.hero-animate .profile-image-container,
+    .hero-section.hero-animate .hero-actions {
+        opacity: 1;
+        transform: none;
+        animation: none;
+    }
+
+    .skill-card:hover,
+    .project-card:hover,
+    .skill-card:hover img,
+    .project-card:hover img {
+        transform: none;
+    }
 }

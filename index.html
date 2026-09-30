@@ -73,6 +73,43 @@
                                     closeMenu();
                                 }
                             });
+
+                            var revealElements = document.querySelectorAll(
+                                'main section, .timeline-item, .skill-card, .project-card'
+                            );
+
+                            if ('IntersectionObserver' in window) {
+                                var revealObserver = new IntersectionObserver(function (entries, observer) {
+                                    entries.forEach(function (entry) {
+                                        if (!entry.isIntersecting) return;
+
+                                        entry.target.classList.add('visible');
+                                        observer.unobserve(entry.target);
+                                    });
+                                }, {
+                                    rootMargin: '0px 0px -10% 0px',
+                                    threshold: 0.1
+                                });
+
+                                revealElements.forEach(function (element, index) {
+                                    element.classList.add('reveal');
+
+                                    if (element.classList.contains('skill-card') || element.classList.contains('project-card')) {
+                                        element.style.setProperty('--reveal-delay', (index % 4) * 80 + 'ms');
+                                    }
+
+                                    revealObserver.observe(element);
+                                });
+                            } else {
+                                revealElements.forEach(function (element) {
+                                    element.classList.add('visible');
+                                });
+                            }
+
+                            var heroSection = document.querySelector('.hero-section');
+                            if (heroSection) {
+                                heroSection.classList.add('hero-animate');
+                            }
                         });
                     </script>
                 </nav>
