@@ -301,15 +301,15 @@ main .container {
     background-color: var(--color-primary-gold);
     color: var(--color-dark);
     padding: 1rem 2rem;
-    border: none;
+    border: 1px solid transparent;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1rem;
     font-weight: bold;
     text-decoration: none;
     text-align: center;
-    transition: all 0.3s ease;
-    
+    transition: background-color 0.3s ease, color 0.3s ease,
+        border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card {
@@ -317,11 +317,38 @@ main .container {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.project-card h3 {
+    margin: 0;
+    padding: 1.5rem 1.5rem 0.75rem;
+}
+
+.project-card p {
+    margin: 0;
+    padding: 0 1.5rem 1rem;
+    font-size: 0.95rem;
+}
+
+.project-card .tech-stack {
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-soft);
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+}
+
+.project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    padding: 0 1.5rem 1.5rem;
+}
+
 .project-card a:hover {
     background-color: var(--color-dark);
     color: var(--color-primary-gold);
-    border: 1px solid var(--color-primary-gold);
-    box-shadow: 0 0 15px var(--color-primary-gold);
+    border-color: var(--color-primary-gold);
+    box-shadow: 0 4px 12px var(--shadow-accent);
+    transform: translateY(-2px);
 }
 
 .project-card:hover {
@@ -338,17 +365,6 @@ main .container {
 
 .project-card:hover img {
     transform: scale(1.05);
-}
-
-.project-card h3 {
-    padding: 1.5rem;
-    font-size: 1.4rem;
-    color: var(--color-primary-gold);
-}
-
-.project-card p {
-    padding: 0 15px 15px;
-    font-size: 0.95rem;
 }
 
 /* Sección Form */
